@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body id="body">
+    <script>
+        //alert(Math.floor(Math.random()*100))
+        const nouns = ['Aircraft', 'Airport', 'Alligator', 'Ambulance', 'Ankle', 'Antlers', 'Apartment', 'Apple', 'Architect', 'Armchair', 'Arrow', 'Baby', 'Back', 'Bag', 'Bakery', 'Ball', 'Balloon', 'Bank', 'Bat', 'Beans', 'Bear', 'Bed', 'Belt', 'Bill', 'Bird', 'Bitterness', 'Blazer', 'Blender', 'Blouse', 'Board', 'Boat', 'Bones', 'Book', 'Bookcase', 'Boots', 'Bow', 'Boxers', 'Boy', 'Brain', 'Brass', 'Bread', 'Bridge', 'Bucket', 'Buffalo', 'Bulb', 'Busstop', 'Butter', 'Cabin', 'Cabinet', 'Cafe', 'Candy', 'Cane', 'Canoe', 'Cap', 'Car', 'Cardigan', 'Carpet', 'Cashier', 'Casino', 'Castle', 'Cat', 'Cave', 'Cello', 'Chair', 'Chaise longue', 'Cheeks', 'Cheese', 'Chest', 'Chicken', 'Children', 'Chocolate', 'Choker', 'Church', 'Cinema', 'Clock', 'Coffee', 'Composer', 'Computer', 'Conditioner', 'Cooker', 'Costume', 'Couch', 'Country', 'Cow', 'Crest', 'Crow', 'Deer', 'Dentist', 'Designer', 'Desk', 'Desktop', 'Detective', 'Doctor', 'Dog', 'Dolphin', 'Donkey', 'Dress', 'Dresser', 'Drum', 'Earrings', 'Ears', 'Egg', 'Elephant', 'Estate', 'Eyes', 'Factory', 'Fan', 'Farm', 'Father', 'Film', 'Finger', 'Fish', 'Flag', 'Flower', 'Foot', 'Forest', 'Fork', 'Fox', 'Freezer', 'Frog', 'Fruit', 'Galaxy', 'Garage', 'Garlic', 'Gasstation', 'Gauva', 'Gift', 'Ginger', 'Giraffe', 'Girl', 'Glasses', 'Gloves', 'Goat', 'Governor', 'Gown', 'Grains', 'Grapes', 'Guitar', 'Hair', 'Hamburger', 'Hammer', 'Hand', 'Hat', 'Head', 'Heart', 'Heels', 'Hen', 'Herbs', 'Horn', 'Horse', 'Hospital', 'Hostel', 'Hotel', 'House', 'Jacket', 'Jaw', 'Jersey', 'Jewelry', 'Judge', 'Juicer', 'Jumper', 'Kangaroo', 'Keyboard', 'Kid', 'Knife', 'Koala', 'Lamb', 'Lamp', 'Laptop', 'Lawyer', 'Leg', 'Leggings', 'Lemon', 'Library', 'Lighter', 'Lion', 'Lips', 'London', 'Luggage', 'Lung', 'Mall', 'Man', 'Mango', 'Market', 'Medicine', 'Microscope', 'Milk', 'Mirror', 'Mobile', 'Model', 'Monkey', 'Moon', 'Mother', 'Mouse', 'Mouth', 'Museum', 'Music', 'Musician', 'Neck', 'Necklace', 'Newspaper', 'Noise', 'Noodles', 'Nose', 'Notebook', 'Nurse', 'Ocean', 'Oil', 'Onion', 'Ostrich', 'Oven', 'Owl', 'Pad', 'Painter', 'Palm', 'Pancake', 'Panda', 'Panther', 'Pants', 'Paper', 'Parfume', 'Park', 'Parrot', 'Pasta', 'Peacock', 'Pen', 'Pencil', 'Pharmacist', 'Pharmacy', 'Phone', 'Photographer', 'Physician', 'Piano', 'Pig', 'Pigeon', 'Pipe', 'Plane', 'Plant', 'Police', 'Policestation', 'Popcorn', 'Potato', 'Pouch', 'Professor', 'Pumpkin', 'Purse', 'Pyramid', 'Rabbit', 'Radio', 'Rainbow', 'Razor', 'Refrigerator', 'Remote', 'Restaurant', 'Ribs', 'Rice', 'Ring', 'Road', 'Salt', 'Sand', 'Sandals', 'Sandwich', 'Saxophone', 'Scale', 'School', 'Scissors', 'Shampoo', 'Shark', 'Sheep', 'Ship', 'Shirt', 'Shoes', 'Shorts', 'Shoulder', 'Shower', 'Shrimp', 'Singer', 'Sink', 'Skirt', 'Sky', 'Skyscraper', 'Slippers', 'Smile', 'Smoke', 'Snowman', 'Soap', 'Socks', 'Sofa', 'Soup', 'Spaghetti', 'Sparrow', 'Spoon', 'Stadium', 'Stairs', 'Star', 'Stomach', 'Stove', 'Strawberry', 'Street', 'Suit', 'Suitcase', 'Sun', 'Sunglasses', 'Supermarket', 'Surgeon', 'Swan', 'Sweater', 'Swimmingpool', 'Table', 'Tablet', 'Tail', 'Taxi', 'Tea', 'Teacher', 'Telephone', 'Television', 'Temple', 'Theater', 'Tie', 'Tiger', 'Tissue', 'Toes', 'Tomato', 'Tongue', 'Toothbrush', 'Toothpaste', 'Town', 'Toy', 'Train', 'Trainstation', 'Tree', 'Trenchcoat', 'Trousers', 'Truck', 'Tunnel', 'Turkey', 'Turtle', 'Umbrella', 'Uncle', 'Underwear', 'Vase', 'Vehicle', 'Vest', 'Veterinarian', 'Villa', 'Village', 'Violin', 'Voice', 'Waist', 'Waiter', 'Wallet', 'Washing machine', 'Watch', 'Water', 'Watermelon', 'Whale', 'Wheelchair', 'Whisker', 'Wings', 'Wolf', 'Woman', 'Wound', 'Wrist', 'Xylophone', 'Zebra', 'Zoo']
+        const word = nouns[Math.floor(Math.random()*nouns.length)]
+        //alert(word);
+        var guess = 1
+        var img = document.createElement("img");
+        img.src = "C:\\Users\\Administrator\\Desktop\\ting\\images\\"+word+"\\" + String(guess) + word + ".jpg?random";
+        img.style = "height: 512px;width: 512px"
+        img.id = String(guess)
+        document.getElementById('body').appendChild(img);
+        function handleClick() {
+            var nam = fname.value.toLowerCase()
+            if (nam == word.toLowerCase()) {
+                alert("Correct, you did it in "+String(guess)+" guesses");
+            } else if (nam != "" && guess < 6) {
+                guess = guess + 1;
+                var img = document.createElement("img");
+                img.src = "C:\\Users\\Administrator\\Desktop\\ting\\images\\"+word+"\\" + String(guess) + word + ".jpg?random";
+                img.style = "height: 512px;width: 512px"
+                img.id = String(guess)
+                document.getElementById('body').replaceChild(img,document.getElementById(String(guess-1)));
+                //<img src="C:\Users\Administrator\Desktop\ting\images\Apple\2Apple" alt="Italian Trulli" style="height: 25%;width: 25%;">
+            } else {
+                alert("The word was "+word.toLowerCase())
+            }
+
+            
+        }        
+    </script>
+    <!--
+    <img src="apple.jpg" alt="Italian Trulli" style="height: 25%;width: 25%;">
+    -->
+    <form action="javascript:handleClick()"> <!---->
+        <label for="fname">What do you see?:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
