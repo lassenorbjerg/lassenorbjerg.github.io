@@ -13,6 +13,7 @@
         const number = Math.floor(Math.random()*nouns.length)
         const word = nouns[number]
         const colour = cols[number]
+        var finished = false
         console.log(number,word,colour)
         document.body.style.backgroundColor = "rgb"+colour;
         //document.getElementById()
@@ -25,13 +26,19 @@
         document.getElementById('body').appendChild(img);
         function handleClick() {
             var nam = fname.value.toLowerCase()
-            if (nam == word.toLowerCase()) {
+            if (finished) {
+                void(0)
+            } else if (nam == word.toLowerCase()) {
                 var img = document.createElement("img");
                 img.src = "images/"+word+"/0" + word + ".jpg";
                 img.style = "height: 512px;width: 512px"
                 img.id = 0
                 document.getElementById('body').replaceChild(img,document.getElementById(String(guess)));
+                document.getElementById('wrong').style="color: green;";
+                document.getElementById('wrong').innerHTML="correct";
+                
                 alert("Correct, you did it in "+String(guess)+" guesses");
+                finished = true
             } else if (nam != "" && !(guesses.includes(nam)) && guess < 6) {
                 guess = guess + 1;
                 guesses.push(nam);
@@ -57,7 +64,8 @@
                 img.style = "height: 512px;width: 512px"
                 img.id = String(guess)
                 document.getElementById('body').replaceChild(img,document.getElementById(String(guess-1)));
-                //<img src="C:\Users\Administrator\Desktop\ting\images\Apple\2Apple" alt="Italian Trulli" style="height: 25%;width: 25%;">
+
+                document.getElementById('fname').value = ""
             } else if (nam == "") {
                 void(0)
             } else if (guesses.includes(nam)) {
@@ -68,6 +76,7 @@
                 document.getElementById('the form').replaceChild(sameguess,document.getElementById("wrong"));
             } else {
                 alert("The word was "+word.toLowerCase())
+                finished = true
             }
 
             
@@ -80,7 +89,7 @@
     
     <form action="javascript:handleClick()" id="the form"> <!---->
         <label for="fname" style="color: black;">What do you see?:</label>
-        <input type="search" id="fname" name="fname">
+        <input type="search" id="fname" name="fname" autocomplete="off">
         <label style="color: rgb(106, 128, 154);" id="wrong"></label><br>
         <input type="submit" value="Submit">
         <label style="color: black;" id="leftguess">You have 6 guesses left</label><br>
