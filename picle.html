@@ -11,7 +11,7 @@
         //alert(word);
         var guess = 1
         var img = document.createElement("img");
-        img.src = "images/"+word+"/" + String(guess) + word + ".jpg?random";
+        img.src = "images/"+word+"/" + String(guess) + word + ".jpg";
         img.style = "height: 512px;width: 512px"
         img.id = String(guess)
         document.getElementById('body').appendChild(img);
@@ -22,11 +22,13 @@
             } else if (nam != "" && guess < 6) {
                 guess = guess + 1;
                 var img = document.createElement("img");
-                img.src = "images/"+word+"/" + String(guess) + word + ".jpg?random";
+                img.src = "images/"+word+"/" + String(guess) + word + ".jpg";
                 img.style = "height: 512px;width: 512px"
                 img.id = String(guess)
                 document.getElementById('body').replaceChild(img,document.getElementById(String(guess-1)));
                 //<img src="C:\Users\Administrator\Desktop\ting\images\Apple\2Apple" alt="Italian Trulli" style="height: 25%;width: 25%;">
+            } else if (nam == "") {
+                void(0)
             } else {
                 alert("The word was "+word.toLowerCase())
             }
@@ -34,9 +36,9 @@
             
         }        
     </script>
-    <!--
+<!--
 
-        <img src="images/" alt="Italian Trulli" style="height: 25%;width: 25%;">
+        <img src="images/Aircraft/1Aircraft" alt="Italian Trulli" style="height: 25%;width: 25%;">
     -->
     
     <form action="javascript:handleClick()"> <!---->
