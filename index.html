@@ -16,12 +16,12 @@
         var finished = false
         console.log(number,word,colour)
         document.body.style.backgroundColor = "rgb"+colour;
-        //document.getElementById()
+
         var guess = 1
         var guesses = []
         var img = document.createElement("img");
         img.src = "images/"+word+"/" + String(guess) + word + ".jpg";
-        img.style = "height: 512px;width: 512px"
+        img.style = "height: 256px;width: 256px"
         img.id = String(guess)
         document.getElementById('body').appendChild(img);
         function handleClick() {
@@ -31,11 +31,12 @@
             } else if (nam == word.toLowerCase()) {
                 var img = document.createElement("img");
                 img.src = "images/"+word+"/0" + word + ".jpg";
-                img.style = "height: 512px;width: 512px"
+                img.style = "height: 256px;width: 256px"
                 img.id = 0
                 document.getElementById('body').replaceChild(img,document.getElementById(String(guess)));
                 document.getElementById('wrong').style="color: green;";
                 document.getElementById('wrong').innerHTML="correct";
+                document.getElementById('leftguess').innerHTML="";
                 
                 alert("Correct, you did it in "+String(guess)+" guesses");
                 finished = true
@@ -44,24 +45,17 @@
                 guesses.push(nam);
                 var prevguess = document.createElement("label")
                 prevguess.innerText = "\n"+nam
+                prevguess.style = "position: relative; left:310px;top:-300px;"
                 document.getElementById('body').appendChild(prevguess);
-                //var sameguess = document.createElement("label")
-                //sameguess.innerHTML = "wrong, try again"
-                //sameguess.id = "wrong"
-                //sameguess.style = "color: red;"
-                //document.getElementById('the form').replaceChild(sameguess,document.getElementById("wrong"));
                 sameguess = document.getElementById('wrong')
                 sameguess.style = "color: red;"
                 sameguess.innerHTML = "wrong, try again"
                 
-                
-
-
                 lg = document.getElementById('leftguess').innerHTML = "You have " + String(7-guess) + " guesses left";
 
                 var img = document.createElement("img");
                 img.src = "images/"+word+"/" + String(guess) + word + ".jpg";
-                img.style = "height: 512px;width: 512px"
+                img.style = "height: 256px;width: 256px"
                 img.id = String(guess)
                 document.getElementById('body').replaceChild(img,document.getElementById(String(guess-1)));
 
@@ -76,6 +70,7 @@
                 document.getElementById('the form').replaceChild(sameguess,document.getElementById("wrong"));
             } else {
                 alert("The word was "+word.toLowerCase())
+                document.getElementById('leftguess').innerHTML="You have 0 guesses left";
                 finished = true
             }
 
@@ -88,12 +83,15 @@
 -->
     
     <form action="javascript:handleClick()" id="the form"> <!---->
-        <label for="fname" style="color: black;">What do you see?:</label>
+        <label for="fname" style="color: black;" id="wdys">What do you see?:</label>
         <input type="search" id="fname" name="fname" autocomplete="off">
         <label style="color: rgb(106, 128, 154);" id="wrong"></label><br>
         <input type="submit" value="Submit">
         <label style="color: black;" id="leftguess">You have 6 guesses left</label><br>
     </form>
-    
+    <script>
+        document.getElementById("wdys").style="color:rgb"+colour+"; filter: invert(100%);";
+        console.log(colour)
+    </script>
 </body>
 </html>
