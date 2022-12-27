@@ -64,6 +64,7 @@
         document.getElementById('body').appendChild(img);
         function handleClick() {
             var nam = fname.value.toLowerCase().trim()
+            document.getElementById('slider').disabled = true
             if (finished) {
                 void (0)
             } else if (nam == word.toLowerCase().trim()) {
